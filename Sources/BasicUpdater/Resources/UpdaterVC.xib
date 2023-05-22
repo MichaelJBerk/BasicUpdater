@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UpdaterVC" customModule="BasicUpdater">
+            <connections>
+                <outlet property="headlineLabel" destination="ufK-Dm-9Qh" id="ujp-58-Zcn"/>
+                <outlet property="imageView" destination="6WD-VV-k3A" id="CtN-o0-UJi"/>
+                <outlet property="subHeadlineLabel" destination="8WM-s2-vd7" id="674-Qv-jxg"/>
+                <outlet property="view" destination="c22-O7-iKe" id="ZkJ-sM-JCx"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="NewVersionView" id="c22-O7-iKe" userLabel="New Version">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="149"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6WD-VV-k3A">
+                    <rect key="frame" x="20" y="81" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="f4S-dG-hdU"/>
+                        <constraint firstAttribute="height" constant="48" id="ief-Tk-yoa"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="DUX-SI-F8z"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-Dm-9Qh">
+                    <rect key="frame" x="76" y="113" width="314" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="A new version is available" id="fTB-VM-bfV">
+                        <font key="font" textStyle="headline" name=".SFNS-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8WM-s2-vd7">
+                    <rect key="frame" x="76" y="48" width="314" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="36B-Fw-tDn"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Do you want to install the new version?" id="V9A-5w-sLL">
+                        <font key="font" textStyle="subheadline" name=".SFNS-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="br0-NL-pWj">
+                    <rect key="frame" x="13" y="13" width="139" height="32"/>
+                    <buttonCell key="cell" type="push" title="Skip This Version" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1te-tx-zcJ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="surpressVersionClicked:" target="-2" id="N7z-Lk-qQ5"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FWy-F8-KZY">
+                    <rect key="frame" x="300" y="13" width="95" height="32"/>
+                    <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jkB-Jp-Rwl">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="downloadButtonClicked:" target="-2" id="gms-bf-cTz"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h2c-Gb-hQn">
+                    <rect key="frame" x="173" y="13" width="137" height="32"/>
+                    <buttonCell key="cell" type="push" title="Remind Me Later" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sj5-6S-wHT">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismissButtonClicked:" target="-2" id="OYH-gG-9pt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FWy-F8-KZY" secondAttribute="trailing" constant="20" symbolic="YES" id="1gq-CU-GNB"/>
+                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="408" id="N7q-GM-0Ru"/>
+                <constraint firstItem="h2c-Gb-hQn" firstAttribute="top" secondItem="8WM-s2-vd7" secondAttribute="bottom" constant="8" symbolic="YES" id="Nvq-wP-XNS"/>
+                <constraint firstItem="8WM-s2-vd7" firstAttribute="top" secondItem="ufK-Dm-9Qh" secondAttribute="bottom" constant="10" id="QMb-Pp-DhJ"/>
+                <constraint firstItem="8WM-s2-vd7" firstAttribute="leading" secondItem="6WD-VV-k3A" secondAttribute="trailing" constant="10" id="W0f-qp-QPS"/>
+                <constraint firstItem="ufK-Dm-9Qh" firstAttribute="leading" secondItem="6WD-VV-k3A" secondAttribute="trailing" constant="10" id="Y0m-d5-XCJ"/>
+                <constraint firstAttribute="bottom" secondItem="h2c-Gb-hQn" secondAttribute="bottom" constant="20" symbolic="YES" id="YAQ-yh-6jn"/>
+                <constraint firstAttribute="bottom" secondItem="FWy-F8-KZY" secondAttribute="bottom" constant="20" symbolic="YES" id="hxk-Ea-MsJ"/>
+                <constraint firstItem="FWy-F8-KZY" firstAttribute="leading" secondItem="h2c-Gb-hQn" secondAttribute="trailing" constant="4" id="jXh-XK-2cR"/>
+                <constraint firstAttribute="trailing" secondItem="8WM-s2-vd7" secondAttribute="trailing" constant="20" symbolic="YES" id="o0Q-Rp-t4B"/>
+                <constraint firstItem="6WD-VV-k3A" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" symbolic="YES" id="pWn-kO-N1c"/>
+                <constraint firstItem="br0-NL-pWj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" symbolic="YES" id="qsh-MF-bKU"/>
+                <constraint firstItem="6WD-VV-k3A" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" symbolic="YES" id="sJ8-4c-9Ls"/>
+                <constraint firstItem="ufK-Dm-9Qh" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" symbolic="YES" id="uRO-73-gZ8"/>
+                <constraint firstAttribute="bottom" secondItem="br0-NL-pWj" secondAttribute="bottom" constant="20" symbolic="YES" id="uXd-Zl-eoN"/>
+                <constraint firstAttribute="trailing" secondItem="ufK-Dm-9Qh" secondAttribute="trailing" constant="20" symbolic="YES" id="x04-2f-iju"/>
+            </constraints>
+            <point key="canvasLocation" x="13" y="52.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+    </resources>
+</document>
