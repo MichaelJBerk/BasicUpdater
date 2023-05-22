@@ -15,6 +15,10 @@ Note: This package only opens a download link to the update - the user will stil
 - Allow the user to skip specific versions, or turn on/off automatic updates 
 - Define the semantics for what release constitutes a "new version", and which asset to use
 
+# Installation
+
+To add BasicUpdater to your app, go to File -> Add Packages... in Xcode, then enter this project's URL into the search field (https://github.com/michaeljberk/BasicUpdater)
+
 # Documentation
 Documentation can be found at https://michaeljberk.github.io/BasicUpdater/documentation/basicupdater/
 
