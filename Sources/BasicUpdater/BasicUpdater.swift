@@ -39,7 +39,7 @@ public class Updater: ObservableObject {
 	///UserDefaults suite to use
 	var userDefaults: UserDefaults!
 	
-	///URL for the project on Github to use when retrieving updates
+	///URL for the project on Github, such as `https://github.com/michaeljberk/BasicUpdater`, to use when retrieving updates
 	var projectURL: URL!
 	
 	///Closure that defines the semantics of when a user should be prompted to a particular release
@@ -59,7 +59,7 @@ public class Updater: ObservableObject {
 	/// If the object's ``autoCheckForUpdates`` property is `true`, it will automatically check for upates after the Updater is initalized.
 	///
 	/// - Parameters:
-	///   - projectURL: URL for the project on GitHub
+	///   - projectURL: URL for the project on GitHub, such as `https://github.com/michaeljberk/BasicUpdater`.
 	///   - userDefaultsSuite: Name of custom UserDefaults suite to use for keeping track of ``autoCheckForUpdates`` and ``skippedVersions``. If not specified, the Updater will use `standard`.
 	///   - autoCheckByDefault: The default value for the ``autoCheckForUpdates`` property. Defaults to `true`
 	///   - shouldUpdateTo: Closure that defines whether or not the user should be prompted to update to a release with a given tag.

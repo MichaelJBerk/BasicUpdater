@@ -31,8 +31,9 @@ struct MyCoolApp: App {
 	//...
 }
 ```
+Take a look at the documentation for ``Updater/init(projectURL:userDefaultsSuite:autoCheckByDefault:shouldUpdateTo:assetToUse:)`` to see the specifics of how to initalize the Updater.
 
-To access the Updater object from a view, you can eithr call the static variable, or pass the updater as an EnvironmentObject in SwiftUI.  
+To access the Updater object from a view, you can either call the static variable, or pass the updater as an `EnvironmentObject` in SwiftUI.  
 
 
 ## Determining if the User Should Update to a Release

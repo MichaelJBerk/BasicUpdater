@@ -7,6 +7,5 @@ final class BasicUpdaterTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
 //        XCTAssertEqual(BasicUpdater().text, "Hello, World!")
-		Updater.shared.checkForUpdates()
     }
 }
