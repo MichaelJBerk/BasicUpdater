@@ -15,6 +15,9 @@ Note: This package only opens a download link to the update - the user will stil
 - Allow the user to skip specific versions, or turn on/off automatic updates 
 - Define the semantics for what release constitutes a "new version", and which asset to use
 
+# Documentation
+Documentation can be found at https://michaeljberk.github.io/BasicUpdater/documentation/basicupdater/
+
 
 ## Why not use Sparkle?
 Sparkle is a great way to provide automatically download and install app updates, but can sometimes be a bit unweildy for simpler projects. Since it installs the app update (instead of just downloading the update), it requires more setup (such as generating a signing key for updates). Additionally, it requires the user to create and appcast to publish updates to users, which can be difficult for certain workflows. In contrast, BasicUpdater requires less extra setup, and uses GitHub Release as a simple mechanism to provide new releases without the need to host and update an appcast. 
