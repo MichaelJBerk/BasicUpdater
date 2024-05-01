@@ -1,5 +1,6 @@
 import Foundation
 import Cocoa
+import os
 
 ///Object that manages checking and prompting for updates
 public class Updater: ObservableObject {
@@ -105,19 +106,24 @@ public class Updater: ObservableObject {
 	///   - maxReleases: Number of GitHub releases to check. Due to GitHub's API, this can't be over 100. Defaults to 1.
 	public func checkForUpdates(showIfLatest: Bool = true, maxReleases: Int = 1) {
 		Task {
-			let releases = try! await getReleases(max: maxReleases)
-			var foundUpdate = false
-			for release in releases {
-				if self.shouldUpdateTo(release: release) == true {
-					foundUpdate = true
-					await MainActor.run {
-						self.showUpdater(for: release)
+			do {
+				let releases = try await getReleases(max: maxReleases)
+				var foundUpdate = false
+				for release in releases {
+					if self.shouldUpdateTo(release: release) == true {
+						foundUpdate = true
+						await MainActor.run {
+							self.showUpdater(for: release)
+						}
+						break
 					}
-					break
 				}
-			}
-			if showIfLatest, !foundUpdate {
-				await showLatestAlert()
+				if showIfLatest, !foundUpdate {
+					await showLatestAlert()
+				}
+			} catch {
+				let errorStr = String(describing: error)
+				NSLog("BasicUpdater error: %@", errorStr)
 			}
 		}
 	}
